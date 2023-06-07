@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=1600">
+    <meta name="robots" content="noindex, nofollow">
+	<meta name="apple-mobile-web-app-title" content="퀀텀 모니터링 시스템">
+    <meta name="application-name" content="퀀텀 모니터링 시스템">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#2dffba">
+    <meta name="msapplication-TileColor" content="#2dffba">
+    <meta name="theme-color" content="#ffffff">
+    <title>퀀텀 모니터링 시스템</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</head>
+
+<body class="page-home">
+
+	<div class="layout-sidebar">
+        <a href="index.html" class="header"></a>
+        <ul class="menu">
+            <li>
+                <a href="index.html" class="active"><i class="material-icons">home</i></a><!--선택한 페이지에 active 클래스를 추가해 주세요.-->
+            </li>
+            <li>
+                <a href="members.html"><i class="material-icons">people</i></a>
+            </li>
+            <li>
+                <a href="mypage.html"><i class="material-icons">face</i></a>
+            </li>
+        </ul>
+        <button type="button" class="footer"><i class="material-icons">logout</i></button>
+    </div>
+
+	<div class="layout-content">
+
+        <div class="progress"></div><!--'AI 측정' 버튼 누른 다음, 데이터 불러오기 전까지만 노출-->
+
+		<div class="header">
+			<h1>퀀텀 모니터링 시스템</h1>
+		</div>
+
+		<div class="body">
+
+            <div class="section check">
+                <div class="header">
+                    <h3>AI 측정 차량</h3>
+                </div>
+                <div class="body">
+                    <div class="img car">
+
+                        <!--사진 
+                            - 기본값 : 없음 - 측정하기 전에는 노출 안함
+                            - 하단의 'AI 측정' 버튼을 누르면 노출-->
+                        <img src="images/sample-car1.jpg" alt="아이오닉 5">
+                    </div>
+                    <form>
+                        <ul>
+                            <li class="form-item">
+                                <select>
+                                    <option disabled selected>선택</option>
+                                    <option>기아</option>
+                                    <option>삼성</option>
+                                    <option>현대</option>
+                                </select>
+                                <label for="car-number" class="label">제조사</label>
+                            </li>
+                            <li class="form-item">
+                                <select>
+                                    <option disabled selected>선택</option>
+                                    <option>소울 EV 2021</option>
+                                    <option>소울 EV 2020</option>
+                                    <option>소울 EV 2019</option>
+                                    <option>소울 EV 2018</option>
+                                    <option>소울 EV 2017</option>
+                                </select>
+                                <label for="car-number" class="label">차종</label>
+                            </li>
+                            <li class="form-item">
+                                <select>
+                                    <option disabled selected>선택</option>
+                                    <option>Long Range 2WD</option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                </select>
+                                <label for="car-number" class="label">상세 차종</label>
+                            </li>
+                            <li class="form-item">
+                                <input type="text" id="car-number" class="field" placeholder=" ">
+                                <label for="car-number" class="label">차량 번호</label>
+                            </li>
+                        </ul>
+                        <button type="submit" class="btn-h52 btn-primary">AI 측정</button>
+                    </form>
+                </div><!--//body-->
+            </div><!--//section check-->
+
+            <!--측정 결과 영역 시작-->
+            <div class="section-wrap">
+                <!-- <div class="section-row"> -->
+                    <div class="section expect">
+                        <div class="header">
+                            <h3>LSTM <span>기반 예측 결과</span></h3>
+                        </div>
+                        <div class="body">
+
+                            <!--radial 차트 영역 시작
+                                - 적용할 차트 : https://apexcharts.com/javascript-chart-demos/radialbar-charts/basic/
+                                - 차트를 적용할 영역입니다. 차트와 텍스트의 css를 참고해 주세요.
+                                - 차트 : 
+                                    - 크기 : 260 x 260 px
+                                    - 배경 라인색 : rgba(#fff,0.2)
+                                    - 초록색 : #2dffba
+                                - 텍스트 :
+                                    - 라벨 : 16px #fff
+                                    - 값 : margin-top:8px, 56px #fff (%는 40px)
+                            -->
+                            <div class="chart radial" style="background-image:url('images/sample-chart-radial1.png')"><!--차트 적용하면 style은 삭제해 주세요. (디자인 확인용)-->
+                                <h5 class="label">EV 배터리 SOH</h5>
+                                <div class="value">70<span>&nbsp;&#37;</span></div>
+                            </div>
+                            <!--//radial 차트 영역 끝-->
+
+                            <div class="text">
+                                <h5 class="label">배터리 성능 상태</h5>
+                                <div class="value">
+                                    <i class="dot red"></i>주의
+                                    <!--
+                                        - 기본값 : <i class="dot gray"></i>&#8208
+                                        - 데이터 로딩시, 아래 3가지 가운데 1개 노출
+                                            <i class="dot red"></i>주의
+                                            <i class="dot yellow"></i>보통
+                                            <i class="dot green"></i>최적
+                                    -->
+                                </div>
+                                <!--'주의'인 경우만 노출-->
+                                <div class="guide red"><i class="material-icons">warning</i>배터리 교체 필요</div>
+                            </div>
+                        </div><!--//body-->
+                    </div><!--//section expect-->
+                    <div class="section expect">
+                        <div class="header">
+                            <h3>GRU <span>기반 예측 결과</span></h3>
+                        </div>
+                        <div class="body">
+
+                            <!--radial 차트 영역 시작-->
+                            <div class="chart radial" style="background-image:url('images/sample-chart-radial2.png')"><!--차트 적용하면 style은 삭제해 주세요. (디자인 확인용)-->
+                                <h5 class="label">EV 배터리 SOH</h5>
+                                <div class="value">19.8<span>&nbsp;&#37;</span></div>
+                            </div>
+                            <!--//radial 차트 영역 끝-->
+
+                            <div class="text">
+                                <h5 class="label">배터리 성능 상태</h5>
+                                <div class="value">
+                                    <i class="dot yellow"></i>보통
+                                    <!--
+                                        - 기본값 : <i class="dot gray"></i>&#8208
+                                        - 데이터 로딩시, 아래 3가지 가운데 1개 노출
+                                            <i class="dot red"></i>주의
+                                            <i class="dot yellow"></i>보통
+                                            <i class="dot green"></i>최적
+                                    -->
+                                </div>
+                                <!--'주의'인 경우만 노출-->
+                                <!-- <div class="guide red"><i class="material-icons">warning</i>배터리 교체 필요</div> -->
+                            </div>
+                        </div><!--//body-->
+                    </div><!--//section -->
+                <!--//section-row-->
+                <div class="section status">
+                    <div class="header">
+                        <h3>EV 배터리 실시간 충전 현황</h3>
+                        <select class="noborder">
+                            <option selected>60분</option>
+                            <option></option>
+                        </select>
+                    </div>
+                    <div class="body">
+                        <!--area 차트 영역 시작
+                            - 적용할 차트 : https://apexcharts.com/javascript-chart-demos/area-charts/spline/
+                            - 차트를 적용할 영역입니다. 차트와 텍스트의 css를 참고해 주세요.
+                            - 차트 : 
+                                - 크기 : 너비 100%, 높이 388 px
+                                - 배경 라인색 : rgba(#fff,0.08)
+                                - 초록색 : #2dffba - 그라디언트 처리
+                            - 텍스트 :
+                                - 라벨 : 14px #fff (x축, y축 동일)
+                        -->
+                        <div class="chart area" style="background-image:url('images/sample-chart-area.png')"><!--차트 적용하면 style은 삭제해 주세요. (디자인 확인용)-->
+                            
+                            <!--데이터 불러오기 전, 내용 없는 경우 노출-->
+                            <!-- <div class="empty">
+                                <h6>데이터가 없습니다.</h6>
+                                <p>측정할 차량을 선택해 주세요.</p>
+                            </div> -->
+                        </div>
+                    </div><!--//body-->
+                </div><!--//section status-->
+            </div><!--//section-wrap-->
+            <!--//측정 결과 영역 끝-->
+
+        </div><!--//body-->
+
+	</div><!--//layout-content-->
+</body>
+</html>
