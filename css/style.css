@@ -416,8 +416,11 @@ select:not(select.noborder) {
 select:not(select.noborder):focus {
   border-bottom: 1px solid #2DFFBA !important;
 }
-select option, select option:checked {
+select option {
   color: #000 !important;
+}
+select option:disabled {
+  color: #888 !important;
 }
 
 .i-readonly {
