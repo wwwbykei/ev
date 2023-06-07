@@ -419,7 +419,7 @@ select:not(select.noborder):focus {
 select option {
   color: #000 !important;
 }
-select option:disabled {
+select option:checked {
   color: #888 !important;
 }
 
