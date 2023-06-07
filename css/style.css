@@ -135,7 +135,7 @@ input[type=button], input[type=submit], select {
   background: none;
 }
 
-input[type=text], input[type=password], input[type=search], input[type=number], input[type=email], input[type=tel], input[type=file], input[type=date], select, textarea {
+input[type=text], input[type=password], input[type=search], input[type=number], input[type=email], input[type=tel], input[type=file], input[type=date], input[type=month], select, textarea {
   -webkit-appearance: none;
   border-radius: 0;
   -webkit-border-radius: 0;
@@ -418,9 +418,6 @@ select:not(select.noborder):focus {
 }
 select option {
   color: #000 !important;
-}
-select option:checked {
-  color: #888 !important;
 }
 
 .i-readonly {
