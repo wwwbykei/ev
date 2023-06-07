@@ -416,7 +416,7 @@ select:not(select.noborder) {
 select:not(select.noborder):focus {
   border-bottom: 1px solid #2DFFBA !important;
 }
-select option {
+select option, select option:disabled, select option:selected {
   color: #000 !important;
 }
 
