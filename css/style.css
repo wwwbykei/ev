@@ -407,6 +407,7 @@ select {
   text-align: left !important;
   -moz-text-align-last: left;
        text-align-last: left;
+  color: #f00;
 }
 select:not(select.noborder) {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
