@@ -400,6 +400,7 @@ select {
   padding-right: 40px !important;
   background-position: right 0 top 50% !important;
   position: relative !important;
+  background-color: transparent !important;
   background-image: url(../images/ico-expand-more.png) !important;
   background-repeat: no-repeat;
   background-size: contain;
@@ -407,7 +408,7 @@ select {
   text-align: left !important;
   -moz-text-align-last: left;
        text-align-last: left;
-  color: #f00;
+  color: #fff !important;
 }
 select:not(select.noborder) {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
