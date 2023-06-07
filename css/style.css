@@ -416,6 +416,9 @@ select:not(select.noborder) {
 select:not(select.noborder):focus {
   border-bottom: 1px solid #2DFFBA !important;
 }
+select:hover {
+  color: #000 !important;
+}
 
 .i-readonly {
   background-color: #f4f4f4;
