@@ -416,7 +416,7 @@ select:not(select.noborder) {
 select:not(select.noborder):focus {
   border-bottom: 1px solid #2DFFBA !important;
 }
-select:hover {
+select option {
   color: #000 !important;
 }
 
