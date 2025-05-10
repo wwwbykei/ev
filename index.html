@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=1600">
+    <meta name="robots" content="noindex, nofollow">
+	<meta name="apple-mobile-web-app-title" content="퀀텀 모니터링 시스템">
+    <meta name="application-name" content="퀀텀 모니터링 시스템">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#2dffba">
+    <meta name="msapplication-TileColor" content="#2dffba">
+    <meta name="theme-color" content="#ffffff">
+    <title>퀀텀 모니터링 시스템</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="page-home">
+
+	<div class="layout-sidebar">
+        <a href="index.html" class="header"></a>
+        <ul class="menu">
+            <li>
+                <a href="index.html" class="active"><i class="material-icons">home</i></a><!--선택한 페이지에 active 클래스를 추가해 주세요.-->
+            </li>
+            <li>
+                <a href="history.html"><i class="material-icons">history</i></a>
+            </li>
+            <li>
+                <a href="analysis.html"><i class="material-icons">data_usage</i></a>
+            </li>
+            <li>
+                <a href="members.html"><i class="material-icons">people</i></a>
+            </li>
+            <li>
+                <a href="mypage.html"><i class="material-icons">face</i></a>
+            </li>
+        </ul>
+        <button type="button" class="footer"><i class="material-icons">logout</i></button>
+    </div>
+
+	<div class="layout-content">
+
+		<div class="header">
+			<h1>퀀텀 모니터링 시스템</h1>
+		</div>
+
+		<div class="body">
+
+            <form class="section-form">
+                <div class="form-group">
+                    <div class="header">
+                        <h3>충전기</h3>
+                    </div>
+                    <div class="body">
+                        <ul>
+                            <li class="form-row">
+                                <div class="form-item">
+                                    <select id="charger-area">
+                                        <option disabled selected>선택</option>
+                                        <option>제주시</option>
+                                        <option>서귀포시</option>
+                                    </select>
+                                    <label for="charger-area" class="label">지역</label>
+                                </div>
+                                <div class="form-item">
+                                    <select id="charger-equipment">
+                                        <option disabled selected>선택</option>
+                                        <option>첨단 001</option>
+                                        <option>첨단 002</option>
+                                        <option>첨단 003</option>
+                                        <option>성산 001</option>
+                                    </select>
+                                    <label for="charger-equipment" class="label">충전기</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div><!--//body-->
+                </div><!--//form-group-->
+
+                <div class="form-group">
+                    <div class="header">
+                        <h3>AI 측정 차량</h3>
+                        <select class="no-label">
+                            <option disabled selected>선택</option>
+                            <option>세트 A</option>
+                            <option></option>
+                            <option></option>
+                        </select>
+                    </div>
+                    <div class="body">
+                        <div class="img car">
+
+                            <!--사진 
+                                - 기본값 : 없음 - 측정하기 전에는 노출 안함
+                                - 하단의 'AI 측정' 버튼을 누르면 노출-->
+                            <img src="images/sample-car1.jpg" alt="아이오닉 5">
+                        </div>
+                        <ul>
+                            <li class="form-row">
+                                <div class="form-item">
+                                    <select id="car-maker">
+                                        <option disabled selected>선택</option>
+                                        <option>기아</option>
+                                        <option>삼성</option>
+                                        <option>현대</option>
+                                    </select>
+                                    <label for="car-maker" class="label">제조사</label>
+                                </div>
+                                <div class="form-item">
+                                    <select id="car-model">
+                                        <option disabled selected>선택</option>
+                                        <option>소울 EV 2021</option>
+                                        <option>소울 EV 2020</option>
+                                        <option>소울 EV 2019</option>
+                                        <option>소울 EV 2018</option>
+                                        <option>소울 EV 2017 소울 EV 2017 소울 EV 2017</option>
+                                    </select>
+                                    <label for="car-model" class="label">차종</label>
+                                </div>
+                            </li>
+                            <li class="form-row">
+                                <div class="form-item">
+                                    <select id="car-year">
+                                        <option disabled selected>선택</option>
+                                        <option>2023</option>
+                                        <option>2022</option>
+                                        <option>2021</option>
+                                        <option>2020</option>
+                                        <option>2019</option>
+                                        <option>2018</option>
+                                        <option>2017</option>
+                                    </select>
+                                    <label for="car-year" class="label">연식</label>
+                                </div>
+                                <div class="form-item">
+                                    <input type="month" id="car-release" class="field" placeholder=" ">
+                                    <label for="car-release" class="label">출고 시기</label>
+                                </div>
+                            </li>
+                            <li class="form-row">
+                                <div class="form-item">
+                                    <input type="text" id="car-number" class="field" placeholder=" ">
+                                    <label for="car-number" class="label">차량 번호</label>
+                                </div>
+                                <div class="form-item">
+                                    <input type="number" id="car-distance" class="field" placeholder=" ">
+                                    <label for="car-distance" class="label">총 주행 거리&#40;km&#41;</label>
+                                </div>
+                            </li>
+                            <li class="form-row">
+                                <div class="form-item">
+                                    <input type="number" id="car-temperature" class="field" placeholder=" ">
+                                    <label for="car-temperature" class="label">외부 온도&#40;&#8451;&#41;</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div><!--//body-->
+                </div><!--//form-group-->
+                
+                <button type="submit" class="btn-h52 btn-primary">AI 측정</button>
+            </form><!--//section-form-->
+
+            <!--측정 결과 영역 시작-->
+            <div class="section-wrap">
+
+                <!--'AI 측정' 버튼 누른 다음, 데이터 불러오기 전까지만 노출-->
+                <!-- <div class="progress-wrap">
+                    <div class="progress"></div>
+                </div> -->
+                
+                <div class="section">
+
+                    <div class="header">
+                        <h3>충전 정보</h3>
+                    </div>
+                    <div class="body charging-info">
+                        <div class="section-item info1">
+                            <div class="text">
+                                <!--측정 전-->
+                                <!-- <h5>&#8208</h5>
+                                <p>&#8208</p> -->
+                                
+                                <!--측정 후-->
+                                <h5>충전중</h5><!--노출할 텍스트: 충전중 or 충전 완료-->
+                                <p>2023-06-21 16:27:39 업데이트</p>
+                            </div>
+                            <div class="chart-battery">
+                                <!--측정 전-->
+                                <!-- <div style="width:0"></div> -->
+                                
+                                <!--측정 후: 배터리 충전 퍼센티지를 style 태그에 변수로 적용해 주세요.-->
+                                <div style="width:64.1%"></div>
+                            </div>
+                            <div class="value large bold">
+                                <!--측정 전-->
+                                <!-- &#8208<span>&nbsp;&#37;</span> -->
+                                
+                                <!--측정 후-->
+                                64.1<span>&nbsp;&#37;</span>
+                            </div>
+                        </div>
+                        <div class="section-row info2">
+                            <div class="section-item">
+                                <h5 class="label">전압</h5>
+                                <div class="value small bold">
+                                    <!--측정 전-->
+                                    <!-- &#8208V -->
+                                    
+                                    <!--측정 후-->
+                                    383.2V
+                                </div>
+                            </div>
+                            <!-- <hr class="line-v"> -->
+                            <div class="section-item">
+                                <h5 class="label">전류</h5>
+                                <div class="value small bold">
+                                    <!--측정 전-->
+                                    <!-- &#8208A -->
+                                    
+                                    <!--측정 후-->
+                                    220A
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-col info3">
+                            <div class="section-item">
+                                <h5 class="label">충전 시간</h5>
+                                <div class="value">
+                                    <!--측정 전-->
+                                    <!-- 00:00:00 -->
+                                    
+                                    <!--측정 후-->
+                                    00:23:30
+                                </div>
+                            </div>
+                            <div class="section-item">
+                                <h5 class="label">시작 시간</h5>
+                                <div class="value small">
+                                    <!--측정 전-->
+                                    <!-- 0000-00-00 00:00:00 -->
+                                    
+                                    <!--측정 후-->
+                                    2023-05-02 23:02:22
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--//body-->
+                </div><!--//section-->
+
+                <div class="section">
+                    <div class="header">
+                        <h3>예측 정보</h3>
+                    </div>
+                    <div class="body forecast-info">
+                        <div class="info1">
+                            <div class="header">
+                                <h5>배터리 점수</h5>
+                                <hr class="line">
+                            </div>
+                            <div class="section-item">
+                                <h5 class="label">동일 모델/연식 대비 (평균)</h5>
+                                <div class="value small">
+                                    <i class="triangle red"></i>5.2<span>&nbsp;점</span>
+                                    <!--
+                                        - 기본값 : <i> 태그는 없음. 점수 텍스트만 노출함. -> &#8208<span>&nbsp;점</span>
+                                        - 데이터 로딩시, 아래 3가지 가운데 1개 노출
+                                            1. 평균보다 낮음: <i class="triangle red"></i>5.2<span>&nbsp;점</span>
+                                            2. 평균과 같음: 0<span>&nbsp;점</span>
+                                            3. 평균보다 높음: <i class="triangle green"></i>5.2<span>&nbsp;점</span>
+                                    -->
+                                </div>
+                            </div>
+                            <div class="chart-wrap">
+                                <div class="section-item chart-gauge" style="background-image:url('images/sample-chart-half.png')"><!--차트 적용하면 style은 삭제해 주세요. (디자인 확인용)-->
+                                    <!--guage 차트 영역 시작
+                                        - 적용할 차트 : https://apexcharts.com/javascript-chart-demos/radialbar-charts/semi-circle-gauge/
+                                        - 차트를 적용할 영역입니다. 차트와 텍스트의 css를 참고해 주세요.
+                                        - 차트 : 
+                                            - 크기 : 212 x 112 px
+                                            - 라인 두께 : 12px
+                                            - 배경 라인 색 : rgba(#fff,0.2)
+                                            - 색
+                                                1. 빨강 : #fb435f
+                                                2. 노랑 : #ffd464
+                                                3. 초록색 : #2dffba
+                                    -->
+                                    <h5 class="label">검사 차량 예측</h5>
+                                    <div class="value small">
+                                        <!--측정 전-->
+                                        <!-- &#8208A<span>&nbsp;점</span> -->
+                                        
+                                        <!--측정 후-->
+                                        85.2<span>&nbsp;점</span>
+                                    </div>
+                                </div>
+                                <div class="section-item chart-gauge" style="background-image:url('images/sample-chart-half.png')"><!--차트 적용하면 style은 삭제해 주세요. (디자인 확인용)-->
+                                    <!--guage 차트 영역 시작
+                                        - 적용할 차트 : https://apexcharts.com/javascript-chart-demos/radialbar-charts/semi-circle-gauge/
+                                        - 차트를 적용할 영역입니다. 차트와 텍스트의 css를 참고해 주세요.
+                                        - 차트 : 
+                                            - 크기 : 212 x 112 px
+                                            - 라인 두께 : 12px
+                                            - 배경 라인 색 : rgba(#fff,0.2)
+                                            - 색
+                                                1. 빨강 : #fb435f
+                                                2. 노랑 : #ffd464
+                                                3. 초록색 : #2dffba
+                                    -->
+                                    <h5 class="label">동일 차종 평균</h5>
+                                    <div class="value small">
+                                        <!--측정 전-->
+                                        <!-- &#8208A<span>&nbsp;점</span> -->
+                                        
+                                        <!--측정 후-->
+                                        96<span>&nbsp;점</span>
+                                    </div>
+                                </div>
+                            </div><!--//section-row-->
+                        </div><!--//info1-->
+                        <div class="info2">
+                            <div class="header">
+                                <h5>20% 충전 시간
+                                    <span class="tool" data-tip="배터리 잔여량 20%~80% 구간의 20% 충전에 소요되는 시간" tabindex="1"><i class="material-icons">info</i></span>
+                                </h5>
+                                <hr class="line">
+                            </div>
+                            <div class="section-row">
+                                <div class="section-item">
+                                    <h5 class="label">검사 차량 예측</h5>
+                                    <div class="value small bold">
+                                        <!--측정 전-->
+                                        <!-- 00:00:00 -->
+                                        
+                                        <!--측정 후-->
+                                        00:28:12
+                                    </div>
+                                </div>
+                                <div class="section-item">
+                                    <h5 class="label">동일 차종 평균</h5>
+                                    <div class="value small bold">
+                                        <!--측정 전-->
+                                        <!-- 00:00:00 -->
+                                        
+                                        <!--측정 후-->
+                                        00:20:57
+                                    </div>
+                                </div>
+                            </div><!--//section-row-->
+
+                            <!--측정 전-->
+                            <!-- <div class="empty-text"></div> -->
+
+                            <!--측정 후-->
+                            <ul class="list-disc">
+                                <li>현대 코나 EV 라이트 2018은 20% 충전에 평균 12분 28초가 소요됩니다.</li>
+                                <li><span>평균에 비해 약 1분(6%)이 더 걸립니다.</span></li>
+                            </ul>
+                        </div><!--//info2-->
+                        <div class="info3">
+                            <div class="header">
+                                <h5>동일 차종 SOH</h5>
+                                <hr class="line">
+                            </div>
+                            <!--guage 차트 영역 시작
+                                - 적용할 차트 : https://apexcharts.com/javascript-chart-demos/radialbar-charts/semi-circle-gauge/
+                                - 차트를 적용할 영역입니다. 차트와 텍스트의 css를 참고해 주세요.
+                                - 차트 : 
+                                    - 크기 : 304 x 158 px
+                                    - 라인 두께 : 12px
+                                    - 배경 라인 색 : rgba(#fff,0.2)
+                                    - 색
+                                        1. 빨강 : #fb435f
+                                        2. 노랑 : #ffd464
+                                        3. 초록색 : #2dffba
+                            -->
+                            <div class="chart" style="background-image:url('images/sample-chart-soh.png')"></div><!--차트 적용하면 style은 삭제해 주세요. (디자인 확인용)-->
+                        </div><!--//info3-->
+                    </div><!--//body-->
+                </div><!--//section-->
+
+            </div><!--//section-wrap-->
+            <!--//측정 결과 영역 끝-->
+
+        </div><!--//body-->
+
+	</div><!--//layout-content-->
+</body>
+</html>

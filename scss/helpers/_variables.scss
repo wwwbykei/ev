@@ -1,0 +1,258 @@
+// ---
+// variables (global)
+// ---
+
+// -------
+// color
+// -------
+
+// $navy: #293249;
+// $navy-light: #B8C5E1;
+$blue: #126CBB;
+$blue-dark:#000A14;
+$blue-dark-light:#14191E;
+// $beige: #EFEDEC;
+// $blue-gray: #CCD2E0;
+// $brown-gray: #A59E96;
+// $brown-gray-light: #D2CECA;
+// $gray-dark:#2E2F2E;
+$green: #2DFFBA;
+// $orange-light: #EECFB7;
+$red: #FB435F;
+// $red-brown-gray: #B9958D;
+// $red-light: #E4B9B9;
+$yellow: #FFD464;
+
+$color-primary: $green;
+$color-secondary: $blue-dark;
+
+// $c-violet-dark: #241332;
+// $c-violet-bg: #352641;
+// $c-primary-dark: #512B82;
+// $c-primary: $navy;
+// $c-gray: #D0D0D0;
+// $c-coral: #D47FA6;
+
+// $c-black: #101010;
+// $c-gray-dark: #343434;
+// $c-gray: #4b4b4b;
+// $c-gray-normal: #5f5f5f;
+// $c-gray-light: #909090;
+// $c-line: #e6e6e6;
+
+// $c-white-dark: #f6f6f6;
+// $c-white-light: #fcfcfc;
+
+// $c-pink-hot: #ff5461;
+// $c-pink: #fa6b76;
+// $c-error: #ff1515;
+
+// //각 레벨별 컬러
+// $c-lv: (1: #909090,
+//   2: #e8ae00,
+//   3: #47787a,
+//   4: #ff8132,
+//   5: #ff5461);
+
+// // 각 레벨별 뱃지 컬러 및 이미지
+// $c-badge: (1: (bg: #9e9e9e,
+//     img: "badge/badge-lv-1.png"
+//   ),
+//   2: (bg: #f9c34b,
+//     img: "badge/badge-lv-2.png"
+//   ),
+//   3: (bg: #47787a,
+//     img: "badge/badge-lv-3.png"
+//   ),
+//   4: (bg: #fdb365,
+//     img: "badge/badge-lv-4.png"
+//   ),
+//   5: (bg: #ff8393,
+//     img: "badge/badge-lv-5.png"
+//   ));
+
+// -------
+// * z-index
+// -------
+// $z-header: 200; //헤더
+// $z-header-dim: 210; //헤더 Dim (모바일 전용)
+// $z-header-nav: 220; //헤더 네비게이션
+// $z-burger: 300; //버거 아이콘
+$z-sidebar: 200;
+$zindex-modal-backdrop:             1050 !default;
+$zindex-modal:                      1055 !default;
+// $z-loading: 100; //로딩 이미지
+// $z-fixed-bar: 50; //결제 화면의 하단 고정 바
+
+// $z-header-account-lt: 100;
+// $z-header-user-lt: 200;
+
+// -------
+// * layout
+// -------
+
+// Break Point
+$tablet: 768px;
+$laptop: 1200px;
+$desktop: 1680px;
+
+// Size
+$min-width: 1600px;
+// $max-width: 540px;
+// $max-width-res--laptop-lg: 980px;
+// $max-width-res--laptop-md: 640px;
+// $max-width-mobile: 460px;
+// $header-height: 84px;
+$sidebar-width: 160px;
+// $sidebar-width-min: 80px;
+
+
+// -------
+// * margin, padding
+// -------
+$spacer: 1rem !default;
+$gutter-large: 56px;
+$gutter-medium: 40px;
+$gutter-small: 20px;
+
+// -------
+// * Border, Background
+// -------
+
+$border-width: 1px !default;
+$border-color-base: rgba(#fff,.2);
+$border-radius-base: 4px;
+$bg-color-base: $blue-dark;
+
+// -------
+// * Button
+// -------
+$button-radius-base: $border-radius-base;
+$button-primary-text-color: $blue-dark;
+$button-secondary-text-color: #fff;
+$button-border-color: rgba(#fff,.2);
+$button-outline-bgcolor: transparent;
+$button-radius: 8px;//half;
+
+// -------
+// * Form
+// -------
+$i-style: underline;//underline or border
+$i-radius-base: 4px;
+$form-item-gutter: 20px;
+$i-padding-small-top: 6px;
+$i-padding-small-side: 12px;
+$i-padding-medium-top: 8px;
+$i-padding-medium-side: 16px;
+$i-padding-large-top: 14px;
+$i-padding-large-side: 32px;
+$i-border-color: rgba(#fff,.2);
+$i-border-color-focus: $color-primary;
+$i-background-color: transparent;
+$i-color: #fff;
+$i-label-color: rgba(#fff,.5);
+
+$i-checkbox-background-color: transparent;
+$i-checkbox-border-color: rgba(#fff,.8);
+$i-checkbox-border-hover-color: $color-primary;
+$i-checkbox-active-color: $color-primary;
+$i-checkbox-check-color: $blue-dark;
+
+// -------
+// * table
+// -------
+$table-type: underline;//underline or border
+$table-border-color: rgba(#fff,.2);
+$table-border-color-thead: transparent;
+$table-bgcolor-thead : $blue-dark-light;
+$table-font-size: 1.4rem;
+$table-font-size-thead: $table-font-size;
+$table-font-color-thead: #fff;
+$table-font-color-tbody: rgba(#fff,.8);
+$table-font-color-button: #fff;
+
+// -------
+// * image
+// -------
+$path-image: "../images/";
+$image-radius: 8px;
+$image-bgcolor: rgba(#fff,.03);
+
+// -------
+// * font
+// -------
+$font-size-base: 10px;
+$line-height-base: 1.5 !default;
+$font-family-base: 'Apple SD Gothic Neo','애플 SD 산돌고딕 Neo','Noto Sans KR','Spoqa Han Sans Neo','Spoqa Han Sans','나눔고딕','NanumGothic','맑은 고딕','Malgun Gothic','돋움',Dotum,sans-serif;
+$fw-b: 700;
+$fw-m: 500;
+$fw-r: 400;
+$fw-l: 300;
+$font-color-base: #fff;
+
+// -------
+// * pagination
+// -------
+$pagination-size: 40px;
+$pagination-gutter: $gutter-medium;
+$pagination-arrow-size: 2.4rem;
+$pagination-arrow-color: #fff;
+$pagination-font-size: 1.4rem;
+$pagination-font-color: #fff;
+$pagination-font-color-active: $blue-dark;
+$pagination-bgcolor-active: $color-primary;
+
+// -------
+// * Modals
+// -------
+$modal-inner-padding:               $spacer !default;
+
+$modal-footer-margin-between:       .5rem !default;
+
+$modal-dialog-margin:               .5rem !default;
+$modal-dialog-margin-y-sm-up:       1.75rem !default;
+
+$modal-title-font-size: 2rem;
+$modal-title-align: left;
+$modal-title-line-height:           $line-height-base !default;
+
+$modal-content-color:               null !default;
+$modal-content-bg:                  $blue-dark-light !default;
+$modal-content-border-color:        none !default;
+$modal-content-border-width:        $border-width !default;
+$modal-content-border-radius:       20px !default;
+$modal-content-inner-border-radius: subtract($modal-content-border-radius, $modal-content-border-width) !default;
+
+$modal-backdrop-bg:                 #000 !default;
+$modal-backdrop-opacity:            .5 !default;
+$modal-header-padding-y:            $modal-inner-padding !default;
+$modal-header-padding-x:            $modal-inner-padding !default;
+$modal-header-padding:              $modal-header-padding-y $modal-header-padding-x !default; // Keep this for backwards compatibility
+
+$modal-sm:                          300px !default;
+$modal-md:                          500px !default;
+$modal-lg:                          800px !default;
+$modal-xl:                          1140px !default;
+
+$modal-fade-transform:              translate(0, -50px) !default;
+$modal-show-transform:              none !default;
+$modal-transition:                  transform .3s ease-out !default;
+$modal-scale-transform:             scale(1.02) !default;
+
+// -------
+// * chart
+// -------
+$chart-line-weight: 2px;
+$chart-label-line-width: 24px;
+$chart-label-gutter: 12px;
+$chart-label-font-size: 1.4rem;
+$chart-label-font-weight: normal;
+
+//tooltip
+// $zindex-tooltip:9999;
+// $tooltip-margin:20px;
+// $tooltip-font-size:1.4rem;
+// $tooltip-opacity: 1;
+// $tooltip-arrow-width:.8rem;
+// $tooltip-arrow-height:.4rem;
+// $tooltip-arrow-color:$color-primary;

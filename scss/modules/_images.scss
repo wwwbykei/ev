@@ -1,0 +1,65 @@
+// @import url('https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined');
+
+// ---
+// modules - images
+// ---
+
+img,video{
+    max-width:100%;
+    height:auto;
+    border-radius:inherit;
+}
+.img{
+    border-radius:$image-radius;
+    background-color:$image-bgcolor;
+    img{
+        object-fit: cover;
+        object-position: 50% 50%;
+    }
+}
+// .icon-arrow-upward{
+//   @include bgi(icon/arrow-upward);
+// }
+
+
+// i[class^="ico"]{
+//   display:block;
+//   width:24px;
+//   height:24px;
+//   @include bgs;
+// }
+// .ico-ambulance{
+//   @include bgi(ico-ambulance-gray);
+// }
+// .ico-group{
+//   @include bgi(ico-group-gray);
+// }
+// .ico-location{
+//   @include bgi(ico-location);
+// }
+// .ico-logout{
+//   @include bgi(ico-logout);
+// }
+// .ico-point{
+//   @include bgi(ico-point-gray);
+// }
+// .ico-profile{
+//   @include bgi(ico-profile);
+// }
+// .ico-search{
+//   @include bgi(ico-search);
+// }
+// .ico-warning{
+//   @include bgi(ico-warning);
+// }
+// .active{
+//   .ico-ambulance{
+//     @include bgi(ico-ambulance-white);
+//   }
+//   .ico-group{
+//     @include bgi(ico-group-white);
+//   }
+//   .ico-point{
+//     @include bgi(ico-point-white);
+//   }
+// }
