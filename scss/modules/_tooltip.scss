@@ -1,0 +1,46 @@
+
+/*== start of code for tooltips ==*/
+.tool {
+    cursor: help;
+    position: relative;
+}
+
+/*== common styles for both parts of tool tip ==*/
+.tool::before,
+.tool::after {
+    left: 50%;
+    opacity: 0;
+    position: absolute;
+    z-index: -100;
+}
+.tool:hover::before,
+.tool:focus::before,
+.tool:hover::after,
+.tool:focus::after {
+    opacity: 1;
+    z-index: 100; 
+}
+
+
+/*== pointer tip ==*/
+.tool::before {
+    content: "";
+    bottom: calc(100% + 14px);
+    margin-left: -6px;
+    border-style: solid;
+    border-width: 12px 8px 0 8px;
+    border-color: #2F3439 transparent transparent transparent;
+}
+
+/*== speech bubble ==*/
+.tool::after {
+    background: #2F3439;
+    border-radius: 8px;
+    bottom: 180%;
+    color: #fff;
+    content: attr(data-tip);
+    margin-left: -120px;
+    padding: 8px 12px;
+    width: 240px;
+    font-size:1.4rem;
+}

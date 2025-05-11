@@ -1,0 +1,94 @@
+// ---
+// modules - buttons
+// ---
+
+@mixin btn{
+	display:inline-block;
+	text-align:center;
+	@include break;
+	@include nowrap;
+	vertical-align: middle;
+    i{
+        vertical-align: middle;
+        font-size:1.6rem;
+    }
+}
+.btn-h32{
+    @include btn;
+	padding:6px 12px;
+	@if $button-radius == "half"{
+        @include radius(18px);
+    }
+    @else{
+        @include radius($button-radius);
+    }
+	font-size:1.2rem;
+}
+.btn-h36{
+    @include btn;
+	padding:7px 16px;
+	@if $button-radius == "half"{
+        @include radius(18px);
+    }
+    @else{
+        @include radius($button-radius);
+    }
+	font-size:1.4rem;
+	line-height:2rem;
+}
+.btn-h52{
+    @include btn;
+	padding:13px 24px;	
+    @if $button-radius == "half"{
+        @include radius(26px);
+    }
+    @else{
+        @include radius($button-radius);
+    }
+	font-size:1.6rem;
+}
+@mixin btn-primary{
+	@include b($color-primary);
+	@include bg($color-primary);
+	@include fw-medium;
+	color:$button-primary-text-color;
+}
+.btn-primary{
+	@include btn-primary;
+	&:hover{
+		@include opacity(.6);
+	}
+}
+@mixin btn-blue-dark-light{
+	@include b($blue-dark-light);
+	@include bg($blue-dark-light);
+	@include fw-medium;
+	color:$button-secondary-text-color;
+}
+.btn-blue-dark-light{
+	@include btn-blue-dark-light;
+	&:hover{
+		@include opacity(.6);
+	}
+}
+@mixin btn-outline{
+	@include b($button-border-color);
+    background-color: $button-outline-bgcolor;
+}
+.btn-outline{
+	@include btn-outline;
+	&:hover{
+		@include opacity(.6);
+	}
+}
+.btn-outline-red{
+	@include b($red);
+	color:$red;
+	&:hover{
+		@include opacity(.6);
+	}
+}
+.btn-close{
+    @include material-icons;
+    font-size:2.4rem;
+}

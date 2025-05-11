@@ -1,0 +1,31 @@
+// ---
+// modules - tab
+// ---
+
+.nav-tab{
+    display:flex;
+    flex-direction:row;
+    .tab-item {
+        flex-grow:1;
+        a {
+            display: block;
+            padding: 0 32px 16px;
+            @include bb(rgba(#fff,.2),1px);
+            font-size: 1.6rem;
+            text-align:center;
+            &.active {
+                @include bb($color-primary);
+                @include fw-bold;
+                color: $color-primary;
+            }
+        }
+    }
+}
+.tab-content {
+    > .tab-pane {
+        display: none;
+    }
+    > .active {
+        display: block;
+    }
+}

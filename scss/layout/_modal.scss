@@ -1,0 +1,177 @@
+// ---
+// modal
+// ---
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $zindex-modal;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: center;
+    outline: 0;
+}
+@mixin modal-dialog-scrollable {
+    height: subtract(100%, $modal-dialog-margin * 2);
+
+    .modal-content {
+        max-height: 100%;
+        overflow: hidden;
+    }
+
+    .modal-body {
+        overflow-y: auto;
+    }
+}
+
+@mixin modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    min-height: subtract(100%, $modal-dialog-margin * 2);
+}
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+    display: inline-block;
+    position: relative;
+    width: auto;
+    max-width: 100%;
+    margin: $modal-dialog-margin;
+    pointer-events: none;
+
+    // When fading in the modal, animate it to slide down
+    .modal.fade & {
+        @include transition($modal-transition);
+        transform: $modal-fade-transform;
+    }
+    .modal.show & {
+        transform: $modal-show-transform;
+    }
+
+    // When trying to close, animate focus to scale
+    .modal.modal-static & {
+        transform: $modal-scale-transform;
+    }
+}
+
+// Actual modal
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 40px 40px 52px;
+    pointer-events: auto;
+    background-color: $modal-content-bg;
+    background-clip: padding-box;
+    border: $modal-content-border-width solid $modal-content-border-color;
+    @include radius($modal-content-border-radius);
+    outline: 0;
+}
+
+// Modal background
+.modal-backdrop {
+    @include overlay-backdrop($zindex-modal-backdrop, $modal-backdrop-bg, $modal-backdrop-opacity);
+}
+
+// Modal header
+// Top section of the modal w/ title and dismiss
+.modal-header {
+    display: flex;
+    align-items: center;
+    font-size: $modal-title-font-size;
+    text-align: $modal-title-align;
+    @include fw-bold;
+
+    .btn-close {
+        margin-left:auto;
+    }
+}
+
+// Modal body
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
+.modal-body {
+    position: relative;
+    margin-top: $gutter-medium;
+}
+
+// Footer (for actions)
+.modal-footer {
+    display: flex;
+    align-items: center;
+    margin-top: $gutter-medium;
+    > * {
+        margin: $modal-footer-margin-between * 0.5;
+    }
+    p {
+        display: inline-block;
+        font-size: 1.4rem;
+        vertical-align: middle;
+        span {
+            @include fw-bold;
+        }
+    }
+    a,
+    button {
+        min-width: 120px;
+        margin-left: auto;
+        vertical-align: middle;
+    }
+}
+
+// Scale up the modal
+.modal-dialog {
+    margin: $modal-dialog-margin-y-sm-up auto;
+    text-align:left;
+}
+.modal-lg{
+    max-width: $modal-lg;
+}
+.modal-xl{
+    width:73%;
+    min-width:900px;
+    max-width:$modal-xl;
+}
+.modal-table{
+    .modal-dialog{
+        min-width:720px;
+    }
+}
+.modal-apikey{
+    .modal-dialog{
+        width:400px;
+    }
+    .box-green{
+        margin-bottom:$gutter-medium;
+        padding:12px 0;
+        @include bb($color-primary);
+        text-align:center;
+        font-size:1.6rem;
+        word-wrap: break-word;
+        color:$color-primary;
+    }
+    .modal-footer{
+        button{
+            width:100%;
+        }
+    }
+}
+.modal-car{
+    .modal-dialog{
+        width:500px;
+    }
+    .table-car{
+        td{
+            color:#fff;
+        }
+    }
+    .modal-footer{
+        button{
+            width:100%;
+        }
+    }
+}

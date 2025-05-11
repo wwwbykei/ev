@@ -1,0 +1,374 @@
+// ---
+// modules - form
+// ---
+
+@mixin i-h32 {
+    padding-top:$i-padding-small-top !important;
+    padding-bottom:$i-padding-small-top !important;
+    &.i-border{
+        padding-right:$i-padding-small-side !important;
+        padding-left:$i-padding-small-side !important;
+    }
+    font-size: 1.2rem !important;
+    line-height: 1.8rem !important;
+}
+@mixin i-h40 {
+    padding-top:$i-padding-medium-top !important;
+    padding-bottom:$i-padding-medium-top !important;
+    &.i-border{
+        padding-right:$i-padding-medium-side !important;
+        padding-left:$i-padding-medium-side !important;
+    }
+    font-size: 1.4rem !important;
+    line-height: 2.2rem !important;
+}
+@mixin i-h52 ($i-style) {
+    @if $i-style == border{
+        padding-top:$i-padding-large-top !important;
+        padding-bottom:$i-padding-large-top !important;
+        padding-right:$i-padding-large-side !important;
+        padding-left:$i-padding-large-side !important;
+    }
+    @if $i-style == noborder{
+        padding-top:$i-padding-large-top !important;
+        padding-bottom:$i-padding-large-top !important;
+    }
+    @else{
+        padding-top:$i-padding-large-top + 6px !important;
+        padding-bottom:$i-padding-large-top - 6px !important;
+    }
+    font-size: 1.6rem !important;
+    line-height: 2.4rem !important;
+}
+@mixin i-border {
+    @include b($i-border-color !important);
+    border-radius: $i-radius-base !important;
+    &:focus {
+        @include b($i-border-color-focus !important);
+    }
+}
+@mixin i-underline {
+    @include bb($i-border-color !important);
+    &:focus {
+        @include bb($i-border-color-focus !important);
+    }
+}
+
+input[type="text"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+input[type="file"],
+input[type="date"],
+input[type="month"],
+textarea {
+    max-width: 100%;
+    border: none;
+    background-color:$i-background-color;
+    @include i-underline;
+    color: $i-color;
+    &:disabled{
+        cursor:default;
+        color: rgba($i-color,.4);
+    }
+}
+
+input[type="text"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+input[type="file"],
+input[type="date"],
+input[type="month"] {
+    @include ellipsis();
+    @include valign;
+    @include i-h52 ($i-style);
+    width: 100%;
+}
+
+input[type="password"] {
+    -webkit-text-security: disc;
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+@mixin select-h32 {
+    @include i-h32;
+    @include bgs(16px !important);
+    &.i-border{
+        padding-right: 32px !important;
+        @include bgpos(right 4px, top 50%);
+    }
+    &.i-underline{
+        padding-right: 28px !important;
+        @include bgpos(right 0, top 50%);
+    }
+}
+@mixin select-h40 {
+    @include i-h40;
+    @include bgs(20px !important);
+    &.i-border{
+        padding-right: 40px !important;
+        @include bgpos(right 8px, top 50%);
+    }
+    &.i-underline{
+        padding-right: 28px !important;
+        @include bgpos(right 0, top 50%);
+    }
+}
+@mixin select-h52 ($i-style) {
+    @include i-h52 ($i-style);
+    @include bgs(24px !important);
+    @if $i-style == border{
+        padding-right: 52px !important;
+        @include bgpos(right 12px, top 50%);
+    }
+    @else{
+        padding-right: 40px !important;
+        @include bgpos(right 0, top 50%);
+    }
+}
+select {
+    @include ellipsis();
+    @include select-h52 ($i-style);
+    &:not(&.noborder){
+        @include i-underline;
+    }
+    position: relative !important;
+    background-color: $i-background-color !important;
+    @include bgi(ico-expand-more);
+    @include valign;
+    text-align: left !important;
+    text-align-last: left;
+    color: $i-color !important;
+    option{
+        color:#000 !important;
+    }
+    &.no-label{
+        padding-top:14px !important;
+        padding-bottom:14px !important;
+    }
+}
+
+@mixin placeholder($color: $nput-color-placeholder) {
+    &::-moz-placeholder {
+        color: $color;
+        opacity: 1;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+    }
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+}
+
+.i-readonly {
+    background-color: #f4f4f4;
+}
+
+$radio-size: 16px;
+.radio-container {
+    display: inline-block;
+    position: relative;
+    padding-left: $radio-size + 8px;
+    font-size: 1.2rem;
+    @include pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    // @media @fromtablet{.pl(@radio-size + 12px)}
+    input {
+        position: absolute;
+        @include pointer;
+        opacity: 0;
+
+        &:checked ~ .checkmark {
+            &:after {
+                display: block;
+            }
+        }
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $radio-size;
+        height: $radio-size;
+        @include b(#ccc, 2px);
+        @include radius(50%);
+        background-color: #fff;
+
+        &:after {
+            @include center-abs($radio-size - 10px, $radio-size - 10px);
+            content: "";
+            display: none;
+            border-radius: 50%;
+            background-color: $color-secondary;
+        }
+    }
+
+    &:hover {
+        input ~ .checkmark {
+            @include b($color-secondary, 2px);
+        }
+    }
+}
+
+$checkbox-size: 20px;
+.checkbox-container {
+    display: block;
+    position: relative;
+    width:$checkbox-size;
+    height:$checkbox-size;
+    @include pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    input {
+        position: absolute;
+        @include pointer;
+        opacity: 0;
+
+        &:checked ~ .checkmark {
+            @include b($i-checkbox-active-color);
+            background-color: $i-checkbox-active-color;
+
+            &:after {
+                display: block;
+            }
+        }
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $checkbox-size;
+        height: $checkbox-size;
+        @include b($i-checkbox-border-color, 2px);
+        @include radius(2px);
+        background-color: $i-checkbox-background-color;
+
+        &:after {
+            content: "";
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: calc($checkbox-size / 2 - 3px);
+            height: calc($checkbox-size / 2 + 1px);
+            margin-top: calc(-1 * ($checkbox-size / 2 - 3px));
+            margin-left: calc(-1 * ($checkbox-size / 2 - 6px));
+            border: solid $i-checkbox-check-color;
+            border-width: 0 2px 2px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    }
+    &:hover {
+        input ~ .checkmark {
+            @include b($i-checkbox-border-hover-color, 2px);
+        }
+    }
+}
+
+form{
+    select{
+        width: 100%;
+    }
+}
+.form-row{
+    display: flex;
+    justify-content: space-between;
+    &:not(:first-child){
+        margin-top:$form-item-gutter;
+    }
+    .form-item{
+        flex:1;
+        margin-top:0 !important;
+        &:not(:first-child){
+            margin-left:20px;
+        }
+    }
+}
+//underline style
+.form-item{
+    position:relative;
+    &:not(:first-child){
+        margin-top:$form-item-gutter;
+    }
+    > .field{
+        width:100%;
+        background: transparent;
+        transition: border-color 0.2s;
+        &::placeholder {
+           color: transparent;
+        }
+        &:placeholder-shown ~ .label {
+            font-size: 1.6rem !important;
+            cursor: text;
+            top: 16px;
+        }
+        &:focus ~ .label {
+            color: $color-primary;
+        }
+    }
+    > .label,> .field:focus ~ .label {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        font-size: 1.2rem !important;
+    }
+    > .label {
+        color: $i-label-color;
+    }
+}
+
+// login
+.login-form{
+    margin-top:16px;
+    .btn-h48{
+        width:100%;
+        margin-top:24px;
+    }
+    .form-item {
+        margin-top:24px;
+    }
+    .form-label {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 1.4rem;
+    }
+    .form-error {
+        display: none;
+        margin-top: 12px;
+        font-size: 1.2rem;
+        color: $red;
+        vertical-align: middle;
+
+        &.active {
+            display: block;
+        }
+
+        i {
+            display: inline-block !important;
+            margin-right: 8px;
+            font-size: 1.6rem;
+            vertical-align: middle;
+        }
+    }
+}

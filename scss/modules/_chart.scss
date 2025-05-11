@@ -1,0 +1,47 @@
+// ---
+// layout - chart
+// ---
+
+.list-label {
+    &.horizontal{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        .chart-label{
+            margin-right:12px;
+            margin-left:12px;
+        }
+    }
+}
+
+.chart-label {
+    display:flex;
+    position: relative;
+    text-align: left;
+    .toggle,h6,span{
+        flex-grow:1;
+    }
+    h6,span {
+        flex-grow:1;
+        font-size: $chart-label-font-size;
+        font-weight: $chart-label-font-weight;
+        @include nowrap;
+    }
+    &.dash{
+        padding-left: calc($chart-label-line-width + $chart-label-gutter);
+        @include bullet-dash;
+        &.white{
+            @include bullet-dash(#fff,8px,12px);
+        }
+    }
+    &.rectangle{
+        padding-left: calc($chart-label-line-width + $chart-label-gutter);
+        @include bullet-rectangle;
+        &.blue{
+            @include bullet-rectangle($blue);
+        }
+        &.green{
+            @include bullet-rectangle($color-primary);
+        }
+    }
+}

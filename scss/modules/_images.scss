@@ -1,0 +1,17 @@
+// ---
+// modules - images
+// ---
+
+img,video{
+    max-width:100%;
+    height:auto;
+    border-radius:inherit;
+}
+.img{
+    border-radius:$image-radius;
+    background-color:$image-bgcolor;
+    img{
+        object-fit: cover;
+        object-position: 50% 50%;
+    }
+}

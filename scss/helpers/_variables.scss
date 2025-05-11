@@ -1,0 +1,177 @@
+// ---
+// variables (global)
+// ---
+
+// -------
+// color
+// -------
+$blue: #126CBB;
+$blue-dark:#000A14;
+$blue-dark-light:#14191E;
+$green: #2DFFBA;
+$red: #FB435F;
+$yellow: #FFD464;
+
+$color-primary: $green;
+$color-secondary: $blue-dark;
+
+// -------
+// * z-index
+// -------
+$z-sidebar: 200;
+$zindex-modal-backdrop:             1050 !default;
+$zindex-modal:                      1055 !default;
+
+// -------
+// * layout
+// -------
+
+// Break Point
+$tablet: 768px;
+$laptop: 1200px;
+$desktop: 1680px;
+
+// Size
+$min-width: 1600px;
+$sidebar-width: 160px;
+
+
+// -------
+// * margin, padding
+// -------
+$spacer: 1rem !default;
+$gutter-large: 56px;
+$gutter-medium: 40px;
+$gutter-small: 20px;
+
+// -------
+// * Border, Background
+// -------
+$border-width: 1px !default;
+$border-color-base: rgba(#fff,.2);
+$border-radius-base: 4px;
+$bg-color-base: $blue-dark;
+
+// -------
+// * Button
+// -------
+$button-radius-base: $border-radius-base;
+$button-primary-text-color: $blue-dark;
+$button-secondary-text-color: #fff;
+$button-border-color: rgba(#fff,.2);
+$button-outline-bgcolor: transparent;
+$button-radius: 8px;//half;
+
+// -------
+// * Form
+// -------
+$i-style: underline;//underline or border
+$i-radius-base: 4px;
+$form-item-gutter: 20px;
+$i-padding-small-top: 6px;
+$i-padding-small-side: 12px;
+$i-padding-medium-top: 8px;
+$i-padding-medium-side: 16px;
+$i-padding-large-top: 14px;
+$i-padding-large-side: 32px;
+$i-border-color: rgba(#fff,.2);
+$i-border-color-focus: $color-primary;
+$i-background-color: transparent;
+$i-color: #fff;
+$i-label-color: rgba(#fff,.5);
+
+$i-checkbox-background-color: transparent;
+$i-checkbox-border-color: rgba(#fff,.8);
+$i-checkbox-border-hover-color: $color-primary;
+$i-checkbox-active-color: $color-primary;
+$i-checkbox-check-color: $blue-dark;
+
+// -------
+// * table
+// -------
+$table-type: underline;//underline or border
+$table-border-color: rgba(#fff,.2);
+$table-border-color-thead: transparent;
+$table-bgcolor-thead : $blue-dark-light;
+$table-font-size: 1.4rem;
+$table-font-size-thead: $table-font-size;
+$table-font-color-thead: #fff;
+$table-font-color-tbody: rgba(#fff,.8);
+$table-font-color-button: #fff;
+
+// -------
+// * image
+// -------
+$path-image: "../images/";
+$image-radius: 8px;
+$image-bgcolor: rgba(#fff,.03);
+
+// -------
+// * font
+// -------
+$font-size-base: 10px;
+$line-height-base: 1.5 !default;
+$font-family-base: 'Apple SD Gothic Neo','애플 SD 산돌고딕 Neo','Noto Sans KR','Spoqa Han Sans Neo','Spoqa Han Sans','나눔고딕','NanumGothic','맑은 고딕','Malgun Gothic','돋움',Dotum,sans-serif;
+$fw-b: 700;
+$fw-m: 500;
+$fw-r: 400;
+$fw-l: 300;
+$font-color-base: #fff;
+
+// -------
+// * pagination
+// -------
+$pagination-size: 40px;
+$pagination-gutter: $gutter-medium;
+$pagination-arrow-size: 2.4rem;
+$pagination-arrow-color: #fff;
+$pagination-font-size: 1.4rem;
+$pagination-font-color: #fff;
+$pagination-font-color-active: $blue-dark;
+$pagination-bgcolor-active: $color-primary;
+
+// -------
+// * Modals
+// -------
+$modal-inner-padding:               $spacer !default;
+
+$modal-footer-margin-between:       .5rem !default;
+
+$modal-dialog-margin:               .5rem !default;
+$modal-dialog-margin-y-sm-up:       1.75rem !default;
+
+$modal-title-font-size: 2rem;
+$modal-title-align: left;
+$modal-title-line-height:           $line-height-base !default;
+
+$modal-content-color:               null !default;
+$modal-content-bg:                  $blue-dark-light !default;
+$modal-content-border-color:        none !default;
+$modal-content-border-width:        $border-width !default;
+$modal-content-border-radius:       20px !default;
+$modal-content-inner-border-radius: subtract($modal-content-border-radius, $modal-content-border-width) !default;
+
+$modal-backdrop-bg:                 #000 !default;
+$modal-backdrop-opacity:            .5 !default;
+$modal-header-padding-y:            $modal-inner-padding !default;
+$modal-header-padding-x:            $modal-inner-padding !default;
+$modal-header-padding:              $modal-header-padding-y $modal-header-padding-x !default; // Keep this for backwards compatibility
+
+$modal-sm:                          300px !default;
+$modal-md:                          500px !default;
+$modal-lg:                          800px !default;
+$modal-xl:                          1140px !default;
+
+$modal-fade-transform:              translate(0, -50px) !default;
+$modal-show-transform:              none !default;
+$modal-transition:                  transform .3s ease-out !default;
+$modal-scale-transform:             scale(1.02) !default;
+
+// -------
+// * chart
+// -------
+$chart-line-weight: 2px;
+$chart-label-line-width: 24px;
+$chart-label-gutter: 12px;
+$chart-label-font-size: 1.4rem;
+$chart-label-font-weight: normal;

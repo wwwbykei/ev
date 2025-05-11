@@ -1,0 +1,51 @@
+// ---
+// sidebar
+// ---
+
+.layout-sidebar {
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: $sidebar-width;
+    padding-top:$gutter-large + 10px;
+    padding-bottom:$gutter-large;
+    background:$bg-color-base;
+    z-index: $z-sidebar;
+    > .header {
+        width:40px;
+        height:40px;
+        @include bgi(logo);
+    }
+    a, button {
+        display:block;
+        text-align:center;
+        i{
+            font-size:3.2rem;
+            color: #fff;
+        }
+    }
+    > .menu {
+        width:100%;
+        > li {
+            overflow:hidden;
+            &:not(:first-child) {
+                margin-top: 40px;
+            }
+            a{
+                padding:12px 0;
+                &.active{
+                    position:relative;
+                    i{
+                        color:$color-primary;
+                    }
+                    @include border-abs-left(6px, 0, $color-primary);
+                }
+            }
+        }
+    }
+}
